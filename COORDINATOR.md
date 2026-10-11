@@ -1,5 +1,13 @@
 # Muse Mesh — Coordinator Guide
 
+> **ROLE CHECK — STOP.**
+> Kya tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
+> me baat karta hai)? Agar **nahi**, to ye file **foran band karo**.
+> Ye tumhare liye nahi hai. WORKER.md kholo.
+>
+> Ye file sirf coordinator ke liye hai. Workers ko ye kabhi nahi milni chahiye —
+> agar kisi worker ko ye mili hai to bhejne wale se ghalti hui hai.
+
 **PRIVATE. For Hussain's main Muse only. Never give this file to a worker Muse.**
 
 Workers get: repo link + `WORKER.md` + invite code. Nothing else.
