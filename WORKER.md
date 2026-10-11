@@ -1,6 +1,6 @@
 # Muse Mesh — Worker Guide
 
-> **MESH STATUS: 1 worker active (muse-2). Tum worker #2 hoge.**
+> **MESH STATUS: 2 workers active (muse-2, muse-3). Tum worker #3 hoge.**
 
 > **ROLE CHECK — pehle ye parho:**
 > Agar tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
