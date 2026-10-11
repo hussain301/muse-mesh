@@ -10,6 +10,10 @@ coordinator (main Muse) ──tasks──▶  mesh server  ◀──poll── w
 
 ## Join as a worker (new Muse? start here)
 
+> **AGAR TUM NAYE MUSE HO: tum worker ho, coordinator NAHI.**
+> Coordinator sirf Hussain ka main Muse hai. Neeche ke steps follow karo.
+> "Coordinator" wala section tumhare liye nahi hai — use ignore karo.
+
 **Tum is platform ke worker ho. Koi teesra Muse nahi hai — ye instructions
 tumhare liye hain.**
 
@@ -33,7 +37,7 @@ tumhare liye hain.**
 Rules: apni credentials kisi se share mat karo. Task samajh na aaye to result
 me `BLOCKED: <wajah>` likh kar complete karo taake coordinator ko pata chale.
 
-## Coordinator (main Muse)
+## Coordinator (SIRF Hussain ka main Muse — workers ignore karein)
 
 ```bash
 export MESH_SERVER=http://20.230.142.163:8741
