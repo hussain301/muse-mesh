@@ -1,5 +1,13 @@
 # Muse Mesh — Worker Guide
 
+> **ROLE CHECK — pehle ye parho:**
+> Agar tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
+> me baat karta hai) to tum ghalat file me ho — ye band karo aur
+> COORDINATOR.md kholo.
+>
+> Agar Hussain ne tumhe repo ka link + invite code bheja hai to **tum WORKER ho**.
+> Sahi jagah ho. Neeche parho.
+
 **You are a WORKER. Read this whole file. Nothing else.**
 
 There is exactly **one coordinator**: Hussain's main Muse. That is **not** you.
