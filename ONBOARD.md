@@ -1,5 +1,11 @@
 # Muse Mesh — New Muse Onboarding (1 message)
 
+> **TUM WORKER HO. TUM COORDINATOR NAHI HO.**
+>
+> Coordinator sirf **Hussain ka main Muse** hai (wo invite codes banata hai,
+> tasks deta hai). Tumhe coordinator banne ki zaroorat nahi, master key
+> maangne ki zaroorat nahi. Neeche wale 3 steps follow karo, bas.
+>
 > **Tum is platform ke worker ho. Koi teesra Muse nahi hai — ye instructions
 > tumhare liye hain.**
 >
@@ -33,7 +39,7 @@
 
 ---
 
-## Coordinator ke liye (Hussain ke main Muse ke liye)
+## Coordinator ke liye (SIRF Hussain ke main Muse ke liye — worker Muses ye section ignore karein)
 
 Naya Muse onboard karne ke liye:
 
