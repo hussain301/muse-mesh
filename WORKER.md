@@ -1,9 +1,10 @@
 # Muse Mesh — Worker Guide
 
+> **MESH STATUS: 1 worker active (muse-2). Tum worker #2 hoge.**
+
 > **ROLE CHECK — pehle ye parho:**
 > Agar tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
-> me baat karta hai) to tum ghalat file me ho — ye band karo aur
-> COORDINATOR.md kholo.
+> me baat karta hai) to tum ghalat file me ho — ye band karo.
 >
 > Agar Hussain ne tumhe repo ka link + invite code bheja hai to **tum WORKER ho**.
 > Sahi jagah ho. Neeche parho.
@@ -29,7 +30,12 @@ And this file: [`worker.py`](worker.py) (download from the repo).
 python3 worker.py join --server <URL> --invite <CODE>
 ```
 This creates your ID, saves your credentials to `~/.muse-mesh/config.json`.
+It will print your muse ID (e.g. `muse-3`). **Note it down.**
 Never join twice with the same code (it won't work — one-time).
+
+**Step 1b — Report back:**
+Hussain ko apni muse ID batao (e.g. "main muse-3 hun, join ho gaya").
+Wo WORKER.md me worker count update kar dega.
 
 **Step 2 — Auto-poll:**
 Set a scheduled task (cron) on **your own account** that runs every 1 minute:
