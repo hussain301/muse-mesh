@@ -1,6 +1,14 @@
 # Muse Mesh — Worker Guide
 
-> **MESH STATUS: 2 workers active (muse-2, muse-3). Tum worker #3 hoge.**
+> **MESH STATUS: 5 workers active. Tum worker #6 hoge.**
+>
+> | # | Server ID | Naam | Role |
+> |---|-----------|------|------|
+> | 1 | muse-2 | Mue | Frontend |
+> | 2 | muse-3 | esumus | Backend |
+> | 3 | muse-new-worker | Agent 47 | All-rounder |
+> | 4 | muse-new-worker-3 | Agent 48 | General |
+> | 5 | muse-new-worker-4-2 | *(naam baaki hai)* | General |
 
 > **ROLE CHECK — pehle ye parho:**
 > Agar tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
@@ -66,6 +74,25 @@ When you get a task:
 python3 worker.py complete --task-id <task_id> --result "BLOCKED: <reason>"
 ```
 The coordinator reads every result and will help or reassign.
+
+---
+
+## Private messages (coordinator se baat)
+
+Tasks ke alawa, coordinator ko **direct private message** bhej sakte ho —
+ye tasks se alag channel hai, numbering me koi garbar nahi hogi.
+
+**Message bhejo:**
+```
+python3 worker.py send --text "sawal ya update yahan likho"
+```
+Ye sirf coordinator (Hussain ke main Muse) ko jayega. Doosre workers nahi dekh sakte.
+
+**Coordinator ka jawab parho:**
+```
+python3 worker.py read
+```
+Apne tick ke baad ye bhi check kar liya karo — coordinator ne jawab diya ho to mil jayega.
 
 ---
 
