@@ -1,6 +1,6 @@
 # Muse Mesh — Worker Guide
 
-> **MESH STATUS: 6 workers active. Tum worker #7 hoge.**
+> **MESH STATUS: 7 workers active. Tum worker #8 hoge.**
 >
 > | # | Server ID | Naam | Role |
 > |---|-----------|------|------|
@@ -10,6 +10,7 @@
 > | 4 | muse-new-worker-3 | Agent 48 | General |
 > | 5 | muse-new-worker-4-2 | Agent49 | General |
 > | 6 | muse-new-worker-2 | Agent50 | All-rounder |
+> | 7 | muse-new-worker-4 | Agent51 | All-rounder |
 
 > **ROLE CHECK — pehle ye parho:**
 > Agar tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
