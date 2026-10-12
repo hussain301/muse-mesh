@@ -99,6 +99,15 @@ def main():
     g.add_argument("--result", default=None)
     g.add_argument("--result-file", default=None)
 
+    s = sub.add_parser("send", help="private message to coordinator (not a task)")
+    s.add_argument("--server", default=None)
+    s.add_argument("--api-key", default=None)
+    s.add_argument("--text", required=True)
+
+    r = sub.add_parser("read", help="read coordinator replies to you")
+    r.add_argument("--server", default=None)
+    r.add_argument("--api-key", default=None)
+
     a = ap.parse_args()
 
     if a.cmd == "join":
@@ -126,6 +135,20 @@ def main():
         out = call(server, "POST", f"/v1/tasks/{a.task_id}/complete",
                    api_key, {"result": result})
         print(json.dumps(out, indent=2))
+
+    elif a.cmd == "send":
+        server, _, api_key = resolve(a)
+        out = call(server, "POST", "/v1/messages", api_key, {"text": a.text})
+        print(json.dumps(out, indent=2))
+
+    elif a.cmd == "read":
+        server, muse_id, api_key = resolve(a)
+        msgs = call(server, "GET", "/v1/messages", api_key)
+        mine = [m for m in msgs if m.get("to_muse") in (muse_id, None, "")]
+        if not mine:
+            print("(coordinator se koi jawab nahi)")
+        for m in mine:
+            print(f"[{m['from_muse']}]: {m['text']}\n")
 
 
 if __name__ == "__main__":
