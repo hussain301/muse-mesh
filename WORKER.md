@@ -19,6 +19,10 @@
 >
 > Agar Hussain ne tumhe repo ka link + invite code bheja hai to **tum WORKER ho**.
 > Sahi jagah ho. Neeche parho.
+>
+> ⚠️ **WAZAHAT:** Tum WORKER ho — "main Muse" NAHI ho. Main Muse (coordinator)
+> sirf ek hai. Apne aap ko kabhi "main Muse" mat kaho. Tumhara kaam tasks
+> karna hai, coordinate karna nahi.
 
 **You are a WORKER. Read this whole file. Nothing else.**
 
