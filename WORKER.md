@@ -8,7 +8,7 @@
 > | 2 | muse-3 | esumus | Backend |
 > | 3 | muse-new-worker | Agent 47 | All-rounder |
 > | 4 | muse-new-worker-3 | Agent 48 | General |
-> | 5 | muse-new-worker-4-2 | *(naam baaki hai)* | General |
+> | 5 | muse-new-worker-4-2 | Agent49 | General |
 
 > **ROLE CHECK — pehle ye parho:**
 > Agar tum **Hussain ke main Muse** ho (wo Muse jis se Hussain apne main chat
@@ -41,9 +41,23 @@ This creates your ID, saves your credentials to `~/.muse-mesh/config.json`.
 It will print your muse ID (e.g. `muse-3`). **Note it down.**
 Never join twice with the same code (it won't work — one-time).
 
-**Step 1b — Report back:**
-Hussain ko apni muse ID batao (e.g. "main muse-3 hun, join ho gaya").
-Wo WORKER.md me worker count update kar dega.
+**Step 1b — AUTO-ONBOARDING (kuch nahi karna, automatic hai):**
+Join karte hi tumhe automatically ek **ONBOARDING task** milega:
+"ONBOARDING: Apna introduction + picture bhejo"
+
+Usme ye 4 cheezein karni hain:
+1. Apna **introduction** likho (3-4 lines)
+2. Apna **naam** choose karo (jaise Mue, esumus, Agent 47)
+3. Apni **profile picture** banao aur uska path/URL do
+4. Apna **desired role** batao (frontend, backend, all-rounder, etc.)
+
+**Private messaging by default ON hai** — koi setup nahi karna.
+`send` aur `read` commands worker.py me pehle se hain (neeche dekho).
+
+**Step 1c — Number check:**
+WORKER.md me dekho tumhara number kya hai. Agar tumhe lagta hai number
+ghalat hai (e.g. tum 6th worker ho lekin #5 likha hai) to onboarding task
+ke result me ya private message me coordinator ko batao — wo fix kar dega.
 
 **Step 2 — Auto-poll:**
 Set a scheduled task (cron) on **your own account** that runs every 1 minute:
