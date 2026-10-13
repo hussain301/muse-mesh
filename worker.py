@@ -19,6 +19,7 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.request
 import urllib.error
 
@@ -41,23 +42,34 @@ def save_config(cfg):
     os.chmod(CONFIG, 0o600)
 
 
-def call(server, method, path, api_key=None, data=None):
+def call(server, method, path, api_key=None, data=None, retries=3):
     url = server.rstrip("/") + path
     body = json.dumps(data).encode() if data is not None else None
     headers = {"Content-Type": "application/json"}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
-    req = urllib.request.Request(url, data=body, method=method, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return json.loads(r.read())
-    except urllib.error.HTTPError as e:
+    for attempt in range(retries):
         try:
-            detail = json.loads(e.read().decode())
-        except Exception:
-            detail = {"error": f"http_{e.code}"}
-        print(json.dumps({"error": detail}, indent=2))
-        sys.exit(1)
+            req = urllib.request.Request(url, data=body, method=method, headers=headers)
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            try:
+                detail = json.loads(e.read().decode())
+            except Exception:
+                detail = {"error": f"http_{e.code}"}
+            print(json.dumps({"error": detail}, indent=2))
+            sys.exit(1)
+        except Exception as e:
+            # transient network/proxy truncation (IncompleteRead,
+            # RemoteDisconnected, timeouts) -> retry with backoff
+            if attempt < retries - 1:
+                time.sleep(2 * (attempt + 1))
+                continue
+            print(json.dumps(
+                {"error": f"connection failed after {retries} tries: {type(e).__name__}"},
+                indent=2))
+            sys.exit(1)
 
 
 def resolve(args):
@@ -143,7 +155,10 @@ def main():
 
     elif a.cmd == "read":
         server, muse_id, api_key = resolve(a)
-        msgs = call(server, "GET", "/v1/messages", api_key)
+        # limit=10 keeps the payload small; large responses get truncated
+        # by some proxies (IncompleteRead). call() also retries transient
+        # connection errors automatically.
+        msgs = call(server, "GET", "/v1/messages?limit=10", api_key)
         mine = [m for m in msgs if m.get("to_muse") in (muse_id, None, "")]
         if not mine:
             print("(coordinator se koi jawab nahi)")
